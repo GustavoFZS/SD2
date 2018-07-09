@@ -4,7 +4,6 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 
 require 'grpc'
 require 'rpcmodel_services_pb'
-require 'googleauth'
 
 class Aula
 	attr_accessor :curso, :professor
@@ -146,31 +145,27 @@ def main
 end
 
 def call1()
-  sslCaCrt = fs.readFileSync('C:\Windows\System32\rpc.ce');
-  stub = Rpcm::Greeter::Stub.new('192.168.0.7:5672', :this_channel_is_insecure)
+  stub = Rpcm::Greeter::Stub.new('localhost:50051', :this_channel_is_insecure)
   message = stub.metodo1(Rpcm::Metodo1Request.new())
 end
 
 def call2()
-  sslCaCrt = fs.readFileSync('C:\Windows\System32\rpc.ce');
-  stub = Rpcm::Greeter::Stub.new('192.168.0.7:5672', :this_channel_is_insecure)
+ stub = Rpcm::Greeter::Stub.new('localhost:50051', :this_channel_is_insecure)
   message = stub.metodo2(Rpcm::Metodo2Request.new(value: 12.12)).message
 end
 
 def call3()
-  sslCaCrt = fs.readFileSync('C:\Windows\System32\rpc.ce');
-  stub = Rpcm::Greeter::Stub.new('192.168.0.7:5672', :this_channel_is_insecure)
+  stub = Rpcm::Greeter::Stub.new('localhost:50051', :this_channel_is_insecure)
   message = stub.metodo3(Rpcm::Metodo3Request.new(value1: 0, value2: 1, value3: 2, value4: 3, value5: 5, value6: 8, value7: 12, value8: 20)).message
 end
 
 def call4(msg)
-  stub = Rpcm::Greeter::Stub.new('192.168.0.7:5672', :this_channel_is_insecure)
+  stub = Rpcm::Greeter::Stub.new('localhost:50051', :this_channel_is_insecure)
   message = stub.metodo4(Rpcm::Metodo4Request.new(text: msg)).message
 end
 
 def call5(sala)
-  sslCaCrt = fs.readFileSync('C:\Windows\System32\rpc.ce');
-  stub = Rpcm::Greeter::Stub.new('192.168.0.7:5672', :this_channel_is_insecure)
+  stub = Rpcm::Greeter::Stub.new('localhost:50051', :this_channel_is_insecure)
   message = stub.metodo5(Rpcm::Metodo5Request.new({object: sala})).message
 end
 
