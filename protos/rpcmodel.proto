@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.rpc";
+option java_outer_classname = "RpcModelProto";
+option objc_class_prefix = "RPM";
+
+package rpcm;
+
+service Greeter {
+  
+  rpc Metodo1 (Metodo1Request) returns (Metodo1Reply) {}
+                                        
+  rpc Metodo2 (Metodo2Request) returns (Metodo2Reply) {}
+                                        
+  rpc Metodo3 (Metodo3Request) returns (Metodo3Reply) {}
+                                        
+  rpc Metodo4 (Metodo4Request) returns (Metodo4Reply) {}
+                                        
+  rpc Metodo5 (Metodo5Request) returns (Metodo5Reply) {}
+}
+
+message Metodo1Request {
+}
+
+message Metodo2Request {
+  float value = 1;
+}
+
+message Metodo3Request {
+  float value1 = 1;
+  float value2 = 2;
+  float value3 = 3;
+  float value4 = 4;
+  float value5 = 5;
+  float value6 = 6;
+  float value7 = 7;
+  float value8 = 8;
+}
+
+message Metodo4Request {
+  string text = 1;
+}
+
+message Metodo5Request {
+  string object = 1;
+}
+
+message Metodo1Reply {
+}
+
+message Metodo2Reply {
+  string message = 1;
+}
+
+message Metodo3Reply {
+  string message = 1;
+}
+
+message Metodo4Reply {
+  string message = 1;
+}
+
+message Metodo5Reply {
+  string message = 1;
+}
